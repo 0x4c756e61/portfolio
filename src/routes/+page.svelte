@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Window from '$lib/components/window.svelte';
 	import { info, skills } from '$lib/skills';
+	import { asset } from '$app/paths';
 
 	let selected_window: HTMLDivElement | null = null;
 
@@ -37,7 +38,7 @@
 	<div class="mb-2 flex max-w-md flex-col gap-3">
 		<span class="font-mono"><pre>  ~ whoami</pre></span>
 		<div class="flex flex-row gap-6">
-			<img src="/images/pfp.png" class="aspect-square h-48 w-48 bg-red-200" alt="" />
+			<img src={asset('/images/pfp.png')} class="aspect-square h-48 w-48 bg-red-200" alt="" />
 			<pre class="font-mono whitespace-pre-wrap">{info}</pre>
 		</div>
 		<div>

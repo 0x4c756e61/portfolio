@@ -2,8 +2,10 @@
 	import Window from '$lib/components/window.svelte';
 	import { info, skills } from '$lib/skills';
 	import { asset } from '$app/paths';
+	import Terminal from '$lib/components/terminal.svelte';
 
 	let selected_window: HTMLDivElement | null = null;
+	let previous_selected_window: HTMLDivElement | null = null;
 
 	const handleMousedown = (event: MouseEvent) => {
 		const draggedElem = document.elementsFromPoint(event.x, event.y).find((elem) => {
@@ -12,11 +14,17 @@
 
 		if (!draggedElem) return;
 
+		// [TODO] Better window raising
 		// @ts-expect-error a drag-handle will always have a parent element
 		selected_window = draggedElem.parentNode;
+		// @ts-expect-error selected window will always be true past that point
+		previous_selected_window.style.zIndex = '0';
+		// @ts-expect-error selected window will always be true past that point
+		selected_window.style.zIndex = '999';
 	};
 
 	const handleMouseup = () => {
+		previous_selected_window = selected_window;
 		selected_window = null;
 	};
 
@@ -47,11 +55,13 @@
 	</div>
 </Window>
 
-<Window>
+<Window title="Webbed status">
 	<div class="p-10">
 		<span class="text-5xl">🚧 - WORK IN PROGRESS - 🚧</span>
 	</div>
 </Window>
+
+<Terminal />
 
 <svelte:window
 	onmousedown={handleMousedown}

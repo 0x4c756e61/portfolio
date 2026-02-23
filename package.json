@@ -34,5 +34,9 @@
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.48.1",
 		"vite": "npm:rolldown-vite@latest"
+	},
+	"dependencies": {
+		"@battlefieldduck/xterm-svelte": "^2.2.1",
+		"@xterm/xterm": "^6.0.0"
 	}
 }

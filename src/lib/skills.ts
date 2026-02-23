@@ -1,5 +1,5 @@
 export const info = `  Lyna
-󰥔  20 years
+󰥔  ${new Date().getYear() - new Date('2 april 2005').getYear()} years
   Student
 
 > Haii, I'm Lyna ! I make computers go beep!`;

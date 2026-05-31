@@ -1,70 +1,116 @@
 <script lang="ts">
 	import Window from '$lib/components/window.svelte';
-	import { info, skills } from '$lib/skills';
 	import { asset } from '$app/paths';
-	import Terminal from '$lib/components/terminal.svelte';
-
-	let selected_window: HTMLDivElement | null = null;
-	let previous_selected_window: HTMLDivElement | null = null;
-
-	const handleMousedown = (event: MouseEvent) => {
-		const draggedElem = document.elementsFromPoint(event.x, event.y).find((elem) => {
-			return elem.classList.contains('jsland-grab-handle');
-		});
-
-		if (!draggedElem) return;
-
-		// [TODO] Better window raising
-		// @ts-expect-error a drag-handle will always have a parent element
-		selected_window = draggedElem.parentNode;
-		// @ts-expect-error selected window will always be true past that point
-		previous_selected_window.style.zIndex = '0';
-		// @ts-expect-error selected window will always be true past that point
-		selected_window.style.zIndex = '999';
-	};
-
-	const handleMouseup = () => {
-		previous_selected_window = selected_window;
-		selected_window = null;
-	};
-
-	const handleMousemove = (event: MouseEvent) => {
-		if (!selected_window) return;
-
-		let top = Number(selected_window.style.top.split('px')[0]);
-		top += event.movementY;
-
-		let left = Number(selected_window.style.left.split('px')[0]);
-		left += event.movementX;
-
-		selected_window.style.top = `${top}px`;
-		selected_window.style.left = `${left}px`;
-	};
+	import { Clock, GraduationCap, Heart, TriangleAlert, User } from '@lucide/svelte';
+	import Svelte from '$lib/components/icons/svelte.svelte';
+	import Git from '$lib/components/icons/git.svelte';
+	import Matrix from '$lib/components/icons/matrix.svelte';
 </script>
 
-<Window title="lyna@lyn.pet">
-	<div class="mb-2 flex max-w-md flex-col gap-3">
-		<span class="font-mono"><pre>  ~ whoami</pre></span>
-		<div class="flex flex-row gap-6">
-			<img src={asset('/images/pfp.png')} class="aspect-square h-48 w-48 bg-red-200" alt="" />
-			<pre class="font-mono whitespace-pre-wrap">{info}</pre>
-		</div>
-		<div>
-			<pre class="font-mono">{skills}</pre>
-		</div>
+<div class="my-9">
+	<span class="font-term text-white/80">$ pwd</span>
+	<span id="cmd_result" class="block font-term! text-5xl text-white">Lyna's webbed site</span>
+</div>
+
+<div class="flex flex-row justify-center gap-3">
+	<div class="flex flex-col gap-2.5">
+		<Window title="lyna@lyn.pet" class="mb-2 flex max-w-md flex-col gap-3 font-term">
+			<div class="flex items-center gap-2">
+				<Heart size="15" /><span>~ whoami</span>
+			</div>
+			<div class="flex flex-row gap-6">
+				<img
+					id="logo"
+					src={asset('/images/pfp.png')}
+					class="aspect-square h-40 w-40 bg-red-200"
+					alt=""
+				/>
+				<div class="font-term">
+					<div class="flex items-center gap-2"><User size="16" /> <span>Lyna</span></div>
+					<div class="flex items-center gap-2">
+						<Clock size="16" />
+						{new Date().getYear() - new Date('2 april 2005').getYear()} years old
+					</div>
+
+					<div class="flex items-center gap-2"><GraduationCap size="16" /> Student</div>
+					<br />
+					&gt; Haii, I'm Lyna ! I make computers go beep!
+				</div>
+			</div>
+		</Window>
+		<Window title="ls /sys/class/links" class="flex justify-evenly p-5">
+			<a
+				href="https://github.com/0x4c756e61"
+				class="flex items-center gap-2 fill-white transition-opacity hover:opacity-55"
+			>
+				<div class="w-6"><Git /></div>
+				<span class="flex fill-white">0x4c756e61</span>
+			</a>
+			<a
+				href="https://matrix.to/#/@lunalina:catgirl.cloud"
+				class="flex items-center gap-2 fill-white transition-opacity hover:opacity-55"
+			>
+				<div class="w-6"><Matrix /></div>
+				<span class="flex fill-white">@lunalina:catgirl.cloud</span>
+			</a>
+		</Window>
+		<Window title="cat /proc/skills" class="fill-white">
+			<Svelte />
+		</Window>
 	</div>
-</Window>
 
-<Window title="Webbed status">
-	<div class="p-10">
-		<span class="text-5xl">🚧 - WORK IN PROGRESS - 🚧</span>
+	<div>
+		<Window title="cat /etc/motd" class="flex w-2xl flex-col p-5">
+			<span class="bg-white p-3.5 text-center font-term text-5xl text-black"
+				>CONSTANTLY EVOLVING</span
+			>
+
+			meow
+		</Window>
 	</div>
-</Window>
 
-<Terminal />
-
-<svelte:window
-	onmousedown={handleMousedown}
-	onmousemove={handleMousemove}
-	onmouseup={handleMouseup}
-/>
+	<div class="flex flex-col gap-2.5">
+		<Window title="~/Music" class="flex justify-center gap-2 p-5">
+			<TriangleAlert /> <span class="text-center text-sm italic">currently unavailable</span>
+		</Window>
+		<Window title="ls ~/Projects"></Window>
+		<Window title="Inspiration.x86_64" class="flex justify-evenly gap-0.5">
+			<a href="https://ghostk.id/"
+				><img
+					src="https://ghostk.id/i/88x31.gif"
+					width="88"
+					height="31"
+					alt="https://ghostk.id button"
+				/></a
+			>
+			<a href="https://emeowly.gay/">
+				<img
+					width="88"
+					height="31"
+					src="https://emeowly.gay/_images/assets/emeowly.gif"
+					alt="https://emeowly.gay 88x31"
+				/>
+			</a>
+		</Window>
+		<Window title="ls ~/friends" class="flex justify-evenly gap-0.5 p-3">
+			<a href="https://lunya.moe/"
+				><img
+					src="https://lunya.moe/img/88x31/entities/lunanana.apng"
+					width="88"
+					height="31"
+					alt="Luna's 88x31, it says lunananana on a multitude of flags, mainly the trans and lesbian ones"
+					title="She's the besterestest <3"
+				/></a
+			>
+			<a href="https://nyatalie.fyi">
+				<img
+					width="88"
+					height="31"
+					src="https://nyatalie.fyi/nat88x31.png"
+					alt=""
+					title="Cute goober :3"
+				/>
+			</a>
+		</Window>
+	</div>
+</div>

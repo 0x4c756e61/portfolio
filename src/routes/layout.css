@@ -1,11 +1,80 @@
 @import 'tailwindcss';
 
 body {
-	@apply bg-gray-950;
+	@apply bg-gray-950 select-text selection:bg-gray-600;
+	@apply overflow-hidden bg-cover;
 }
 
 @theme {
 	--font-mono:
 		'Maple Mono NF', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
 		'Courier New', monospace;
+
+	--font-term: 'VT323';
+
+	--font-tiny-term: 'Cozette';
+
+	--animate-blink: blink 1s ease-in-out infinite;
+
+	@keyframes blink {
+		0% {
+			opacity: 0;
+		}
+		50% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+}
+
+#cmd_result::after {
+	content: '_';
+	@apply animate-blink;
+}
+
+@font-face {
+	font-family: 'Cozette';
+	src: url('/fonts/CozetteVectorBold.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: VT323;
+	src:
+		local('VT323'),
+		url('/fonts/VT323.ttf') format('truetype');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Cozette';
+	src: url('/fonts/CozetteVectorBold.woff2') format('woff2');
+}
+
+/* stolen from https://git.lunaa.ch/luna/site/src/branch/main/static/styles.css <3 */
+html::before {
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vw;
+	z-index: 1000;
+	opacity: 60%;
+	--color-base: oklch(13% 0.028 261.692);
+	--scanline-height: 2px;
+	--scanline-gap: 1px;
+	--gap-color: color-mix(in srgb, var(--color-base) 60%, #0000);
+	pointer-events: none;
+
+	background-image: repeating-linear-gradient(
+		to bottom,
+		#0000,
+		#0000 var(--scanline-height),
+		var(--gap-color) var(--scanline-height),
+		var(--gap-color) calc(var(--scanline-height) + var(--scanline-gap))
+	);
 }

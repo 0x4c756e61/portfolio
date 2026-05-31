@@ -107,7 +107,7 @@
 					width="88"
 					height="31"
 					src="https://nyatalie.fyi/nat88x31.png"
-					alt=""
+					alt="Natalie's 88x31, on the left is a girl with a white skin and straight red hair. Next to her is a white text saying 'nat'. The entire thing is on a stripped background, with 3 slanted stripes, blue, pink and purple."
 					title="Cute goober :3"
 				/>
 			</a>

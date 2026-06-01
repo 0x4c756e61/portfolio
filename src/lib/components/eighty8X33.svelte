@@ -8,7 +8,7 @@
 	}: { src: string; alt: string; title?: string; href?: string; rel?: string } = $props();
 </script>
 
-<a {href} {rel}><img {src} width="88" height="31" {alt} {title} class="render" /></a>
+<a {href} {rel}><img {src} width="88" height="31" {alt} {title} class="overflow-hidden" /></a>
 
 <style>
 	img {

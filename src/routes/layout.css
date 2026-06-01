@@ -1,8 +1,7 @@
 @import 'tailwindcss';
 
 body {
-	@apply bg-gray-950 select-text selection:bg-gray-600;
-	@apply overflow-hidden bg-cover;
+	@apply bg-gray-950 selection:bg-gray-600;
 }
 
 @theme {

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import type { Snippet, Component } from 'svelte';
 	import { Minus, Square, X, type LucideProps } from '@lucide/svelte';
-	import { scale } from 'svelte/transition';
 
 	const {
 		title = 'Terminal',
@@ -23,8 +22,7 @@
 {/snippet}
 
 <div
-	class="h-fit flex-col rounded-sm border border-white/15 bg-transparent font-sans text-xl text-white shadow-2xl hover:border-red-400/55"
-	transition:scale
+	class="flex-col rounded-sm border border-white/15 bg-transparent font-sans text-white shadow-2xl hover:border-red-400/55"
 >
 	<!-- Decorations -->
 	<div class="flex flex-row justify-start gap-3 p-3 align-middle select-none">

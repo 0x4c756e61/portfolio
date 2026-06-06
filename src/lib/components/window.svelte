@@ -22,7 +22,7 @@
 {/snippet}
 
 <div
-	class="flex-col rounded-sm border border-white/15 bg-transparent font-sans text-white shadow-2xl hover:border-red-400/55"
+	class="flex-col rounded-sm border border-foreground/15 bg-transparent text-foreground not-dark:border-foreground/30 hover:border-accent/55"
 >
 	<!-- Decorations -->
 	<div class="flex flex-row justify-start gap-3 p-3 align-middle select-none">
@@ -31,8 +31,8 @@
 			{@render decorationButton(Square)}
 			{@render decorationButton(Minus)}
 		</div>
-		<div class="my-auto h-5 w-px rounded-full bg-white opacity-15"></div>
-		<span class="font-tiny-term text-sm font-light text-white opacity-90">{title}</span>
+		<div class="my-auto h-5 w-px rounded-full bg-foreground opacity-15"></div>
+		<span class="font-tiny-term text-sm font-light text-foreground opacity-90">{title}</span>
 	</div>
 	<!-- content -->
 	<div class="px-3 {className}">

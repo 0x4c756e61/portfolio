@@ -17,7 +17,7 @@
 				<img
 					id="logo"
 					src={asset('/images/pfp.png')}
-					class="aspect-square h-40 w-40 bg-white"
+					class="aspect-square h-40 w-40 bg-foreground"
 					alt=""
 				/>
 				<div class="font-term">
@@ -36,17 +36,17 @@
 		<Window title="ls /sys/class/links" class="flex justify-evenly p-5">
 			<a
 				href="https://github.com/0x4c756e61"
-				class="flex items-center gap-2 fill-white transition-opacity hover:opacity-55"
+				class="flex items-center gap-2 fill-foreground transition-opacity hover:opacity-55"
 			>
 				<div class="w-6"><Git /></div>
-				<span class="flex fill-white">0x4c756e61</span>
+				<span class="flex fill-foreground">0x4c756e61</span>
 			</a>
 			<a
 				href="https://matrix.to/#/@lunalina:catgirl.cloud"
-				class="flex items-center gap-2 fill-white transition-opacity hover:opacity-55"
+				class="flex items-center gap-2 fill-foreground transition-opacity hover:opacity-55"
 			>
 				<div class="w-6"><Matrix /></div>
-				<span class="flex fill-white">@lunalina:catgirl.cloud</span>
+				<span class="flex fill-foreground">@lunalina:catgirl.cloud</span>
 			</a>
 		</Window>
 		<Window title="ls ~/Projects"></Window>
@@ -54,7 +54,7 @@
 
 	<div class="flex flex-col gap-3.5">
 		<Window title="cat /etc/motd" class="flex max-w-2xl flex-col gap-5 p-5">
-			<span class="bg-white p-3.5 text-center font-term text-5xl text-black"
+			<span class="bg-foreground p-3.5 text-center font-term text-5xl text-background"
 				>CONSTANTLY EVOLVING</span
 			>
 

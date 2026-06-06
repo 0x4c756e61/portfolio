@@ -133,7 +133,7 @@
 
 			<Eighty8X33
 				href="https://sn0w.re"
-				src="https://sn0w.re/assets/img/buttons/me.gif"
+				src="images/88x31/sn0w.re.gif"
 				alt="snow's 88x31, it's a white text saying snow.re on a black, blue and purple background"
 				title="[Øl]Kofe"
 			/>

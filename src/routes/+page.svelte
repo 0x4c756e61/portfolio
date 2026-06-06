@@ -76,13 +76,10 @@
 				<br /><br />
 				// [TODO]
 				<pre class="whitespace-pre-wrap">
-- Make this thing responsive
 - Describe what's meant to be here
 - Find more things to add
 - Rewrite this without ewscript
-- Add 88x31
 - Make my own 88x31
-- Make a white theme, white themes are good !
 - Make the music widget work
 				</pre>
 				&gt; You should write that you're cute, and tiny, cuz you are<br />

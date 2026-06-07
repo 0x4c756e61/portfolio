@@ -7,7 +7,7 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
-<div class="flex w-full flex-col items-center bg-accent/80 p-5 text-xl text-foreground">
+<div class="flex w-full flex-col items-center bg-accent/80 p-5 font-term text-xl text-foreground">
 	<span class="mb-2.5 text-2xl"
 		>Privacy in the EU is a <span class="text-background italic">LIE</span></span
 	>

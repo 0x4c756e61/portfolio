@@ -1,0 +1,19 @@
+[
+	{
+		"label": "Run development server",
+		"command": "bun run dev",
+		"reveal": "no_focus",
+		"hide": "on_success",
+		"shell": "system",
+		"show_command": false
+	},
+	{
+		"label": "Create new tag and push",
+		"command": "fish .gram/autotag.fish",
+		"reveal": "no_focus",
+		"tags": ["release"],
+		"hide": "on_success",
+		"shell": "system",
+		"show_command": false
+	}
+]

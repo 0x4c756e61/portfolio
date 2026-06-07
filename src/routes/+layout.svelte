@@ -7,6 +7,19 @@
 
 <svelte:head><link rel="icon" href={favicon} /></svelte:head>
 
+<div class="flex w-full flex-col items-center bg-accent/80 p-5 text-xl text-foreground">
+	<span class="mb-2.5 text-2xl"
+		>Privacy in the EU is a <span class="text-background italic">LIE</span></span
+	>
+	<span
+		>They want to scan your private messages and photos. Fight back ! <a
+			href="https://fightchatcontrol.eu"
+			class="text-blue-400 hover:underline">fightchatcontrol.eu</a
+		>
+	</span>
+	<span>The EU is banning privacy preserving cryptocurrencies like monero !</span>
+</div>
+
 <!-- header -->
 <div class="flex flex-col items-center">
 	<div class="my-9">

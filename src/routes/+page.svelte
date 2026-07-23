@@ -183,6 +183,11 @@
 				alt="Am half cat, half human, genetically and soon™ bio modded"
 				title="Am half cat, half human, genetically and soon™ bio modded"
 			/>
+			<Eighty8X33
+				src="images/88x31/fuckaieverything.gif"
+				alt="AI IS NOT WELCOME HERE"
+				title="AI IS NOT WELCOME HERE"
+			/>
 		</Window>
 	</div>
 </div>
